@@ -7,7 +7,8 @@ export default async function RegisterPage({
 }: {
     searchParams: Promise<{ type: FormType }>;
 }) {
-    const registrationType = (await searchParams).type;
+    const type = (await searchParams).type;
+    const registrationType = type ? type : "producto";
     return (
         <div className="h-full p-10 grid grid-cols-[20%_80%]">
             <div className="flex flex-col items-center justify-center gap-10">

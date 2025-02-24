@@ -2,6 +2,13 @@
 import { Store } from "@/lib/Store";
 import { FormState } from "@/lib/types";
 
+export async function getStores() {
+    const res = await fetch("http://localhost:8080/api/v1/stores");
+    const data = (await res.json()) as Store[];
+
+    return data;
+}
+
 export async function registerStore(state: FormState, formData: FormData) {
     const storeData = {
         numName: formData.get("numName"),
