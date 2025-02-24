@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: tia
+      MYSQL_USER: inventario
+      MYSQL_PASSWORD: inventarioapp
+      MYSQL_ROOT_PASSWORD: inventarioapp
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
